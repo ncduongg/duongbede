@@ -1,0 +1,50 @@
+#read-note
+    background: #ff346d
+    color: #fff
+    border-radius: .25rem
+    max-width: calc(100vw - 1.5rem)
+    @apply w-full text-center py-2 mb-12 mx-auto
+
+    &.reading
+        border-radius: 0
+        border-bottom-left-radius: .25rem
+        border-bottom-right-radius: .25rem
+
+#note
+    background: #ff346d
+    max-width: calc(100vw - 1.5rem)
+    color: #fff
+    transition: all .25s ease-in-out
+    height: 0
+    border-top-left-radius: .25rem
+    border-top-right-radius: .25rem
+    @apply px-6 space-y-4 overflow-hidden mx-auto text-sm
+
+    &.expand
+        height: 33rem
+        transition: all .25s ease-in-out
+        @apply py-6
+
+        @media (min-width:375px)
+            height: 25rem
+
+        @media (min-width:430px)
+            height: 24rem
+
+        @media (min-width:460px)
+            height: 23rem
+
+        @media (min-width:515px)
+            height: 22rem
+
+        @media (min-width:560px)
+            height: 20rem
+
+        @media (min-width:630px)
+            height: 18rem
+
+        @media (min-width:768px)
+            height: 16rem
+
+        @media (min-width:940px)
+            height: 14rem

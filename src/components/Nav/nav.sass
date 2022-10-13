@@ -1,0 +1,16 @@
+nav
+    color: #fff
+    z-index: 999
+    background: var(--nav-bg, transparent)
+    transition: all .25s ease-in-out
+    @apply fixed top-0 left-0 right-0 h-16 px-4
+
+    @media (min-width:1280px)
+        @apply px-0
+
+    &.scrolling
+        --nav-bg: #2ca8ff
+
+    #nav-content
+        max-width: 1200px
+        @apply w-full h-full mx-auto uppercase flex items-center 

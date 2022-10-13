@@ -1,0 +1,56 @@
+.custom-select-wrapper
+    @apply relative
+
+    .custom-select-input
+        box-shadow: 0 0 0 1.5px #5aace7
+        color: rgba(0, 0, 0, 0)
+        caret-color: #2ca8ff
+        @apply outline-none px-4 py-2 rounded relative
+
+        &:focus, &.typed
+            --placeholder-o: 0
+
+        &::after
+            content: attr(placeholder)
+            color: #598fb5
+            opacity: var(--placeholder-o, 1)
+            transition: all .25s ease-in-out
+            letter-spacing: 1px
+            @apply absolute top-1/2 left-4 -translate-y-1/2
+
+        &::before
+            content: attr(data-selected)
+            color: #2ca8ff
+            @apply absolute top-1/2 left-4 -translate-y-1/2 font-medium
+
+    .options-list
+        opacity: var(--o, 0)
+        pointer-events: var(--pe, none)
+        transition: all .25s ease-in-out
+        transform: translateY(calc(100% + 1px))
+        background: #fff
+        box-shadow: 0 0 0 1.5px #5aace7
+        border-bottom-left-radius: .25rem
+        border-bottom-right-radius: .25rem
+        z-index: 1
+        @apply absolute bottom-0 left-0 right-0 cursor-pointer
+
+        &:hover
+            --o: 1
+            --pe: auto
+
+        & > *
+            @apply px-4 py-2
+
+            &:hover
+                transition: all .15s ease-in-out
+                background: #2ca8ff
+                color: #fff
+
+    &:focus-within
+        --o: 1
+        --pe: auto
+
+        .custom-select-input
+            border-bottom-left-radius: 0
+            border-bottom-right-radius: 0

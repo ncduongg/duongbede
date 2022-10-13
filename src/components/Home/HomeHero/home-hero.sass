@@ -1,0 +1,36 @@
+#home-hero
+    max-width: 100vw
+    height: 100vh
+    @apply w-full relative overflow-hidden text-center
+
+    &::after
+        content: ""
+        background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(3, 161, 224, 0.6))
+        z-index: 1
+        @apply absolute inset-0
+
+    #hero-bg
+        @apply object-cover object-center w-full h-full
+
+    #home-hero-content
+        color: #fff
+        max-width: 1200px
+        z-index: 2
+        grid-template-rows: min-content 1fr 1fr 1fr 1fr
+        @apply w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center
+
+        #home-logo
+            height: 100px
+            @apply mb-12
+
+        h1
+            @apply text-5xl uppercase font-light mb-8
+
+        h3
+            @apply text-3xl mb-12
+
+        h6
+            @apply text-sm
+
+        strong
+            color: #f96332

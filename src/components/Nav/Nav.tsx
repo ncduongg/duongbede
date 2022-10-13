@@ -9,7 +9,7 @@ export default component$(() => {
   const store = useStore({
     scrollPosition: 0,
   });
-  
+
   useClientEffect$(() => {
     window.addEventListener('scroll', () => {
       store.scrollPosition = window.scrollY

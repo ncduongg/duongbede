@@ -22,23 +22,23 @@
     "qwik": "qwik"
   },
   "devDependencies": {
-    "@builder.io/qwik": "0.10.0",
-    "@builder.io/qwik-city": "0.0.111",
-    "@netlify/vite-plugin-netlify-edge": "1.1.0",
+    "@builder.io/qwik": "^0.11.0",
+    "@builder.io/qwik-city": "^0.0.112",
+    "@netlify/vite-plugin-netlify-edge": "^1.1.1",
     "@types/eslint": "8.4.6",
     "@types/node": "latest",
-    "@typescript-eslint/eslint-plugin": "5.37.0",
-    "@typescript-eslint/parser": "5.37.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
     "autoprefixer": "^10.4.12",
-    "eslint": "8.23.1",
-    "eslint-plugin-qwik": "0.10.0",
+    "eslint": "^8.25.0",
+    "eslint-plugin-qwik": "^0.11.0",
     "node-fetch": "3.2.10",
     "postcss": "^8.4.17",
     "prettier": "2.7.1",
     "tailwindcss": "^3.1.8",
-    "typescript": "4.8.3",
-    "vite": "3.1.1",
-    "vite-tsconfig-paths": "3.5.0"
+    "typescript": "^4.8.4",
+    "vite": "^3.1.8",
+    "vite-tsconfig-paths": "^3.5.1"
   },
   "dependencies": {
     "sass": "^1.55.0"

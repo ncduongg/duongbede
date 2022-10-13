@@ -6,6 +6,7 @@ import Note from './Note/Note';
 import { CartIcon } from './CartIcon';
 
 export default component$(() => {
+
     useStylesScoped$(styles);
     return (
         <div id="product-page">

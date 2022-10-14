@@ -1,0 +1,66 @@
+#search-box
+    width: var(--search-box-width, 4rem)
+    min-height: var(--search-box-height, 30px)
+    background: var(--search-box-bg, #f43d6e)
+    border-radius: 100vmax
+    transform: translate(var(--search-box-translate-x, 0), var(--search-box-translate-y, 0))
+    transition: all .25s ease-in-out .1s
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, var(--opacity-search-backdrop, 0))
+    @apply mx-auto relative overflow-hidden
+
+    &.mobile-active
+        --search-box-width: 90vw
+        --search-box-height: 54px
+        --search-box-translate-x: -50%
+        --y: calc(100% + 4px)
+        --px: 1.5rem
+        --pe: auto
+        --search-box-bg: rgba(255, 255, 255, 0.9)
+        --search-backdrop-clr: #000
+        --opacity-search-backdrop: .5
+        --input-search-clr: #2ca8ff
+        backdrop-filter: blur(2px)
+        @apply absolute left-1/2 bottom-0
+
+        @media (min-width:640px)
+            all: unset
+
+        svg
+            --o: 0
+
+    @media (min-width:640px)
+        --search-box-width: 400px
+        --search-box-height: 54px
+        --search-box-bg: #f43d6e
+        --search-box-translate-x: 0
+        --search-box-translate-y: calc(100% + 4px)
+        --pe: auto
+        --px: 1.5rem
+        --input-search-clr: #fff
+        
+        svg
+            --o: 0
+
+    svg
+        transform: translate(-50%, -50%)
+        opacity: var(--o, 1)
+        transition: all .25s ease-in-out
+        pointer-events: none
+        @apply absolute top-1/2 left-1/2
+
+    #search-input
+        outline: none
+        border: none
+        border-radius: inherit
+        padding: var(--py, .25rem) var(--px, 0)
+        background: transparent
+        pointer-events: var(--pe, none)
+        height: var(--search-box-height)
+        width: var(--search-box-width)
+        color: var(--input-search-clr, transparent)
+
+        @media (min-width:1024px)
+            --py: 1rem
+            --px: 1.5rem
+            --pe: auto
+            transition: all .25s ease-in-out .15s

@@ -3,14 +3,21 @@ nav
     z-index: 999
     background: var(--nav-bg, transparent)
     transition: all .25s ease-in-out
-    @apply fixed top-0 left-0 right-0 h-16 px-4
+    @apply fixed top-0 left-0 right-0 h-16 px-4 whitespace-nowrap
 
     @media (min-width:1280px)
         @apply px-0
 
     &.scrolling
+        --y: 0
         --nav-bg: #2ca8ff
+
+        @media (min-width:640px)
+            #search-box
+                transform: translate(0, 0)!important
+                width: 300px!important
 
     #nav-content
         max-width: 1200px
-        @apply w-full h-full mx-auto uppercase flex items-center 
+        will-change: transform, opacity, width, min-height, padding
+        @apply w-full h-full mx-auto uppercase flex items-center justify-between

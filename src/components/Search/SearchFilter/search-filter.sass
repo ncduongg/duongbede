@@ -1,0 +1,47 @@
+
+.filter-box
+    border: solid 3px #2cdcff
+    border-top-left-radius: .375rem
+    border-top-right-radius: .375rem
+    border-bottom-left-radius: .375rem
+    border-bottom-right-radius: .375rem
+    transition: all .1s linear
+    @apply relative
+
+    &.hover
+        border-bottom-left-radius: 0
+        border-bottom-right-radius: 0
+
+    input
+        outline: none
+        @apply px-4 py-2 w-full
+
+    .filter-option
+        transform: translate(calc(-50%), calc(100% + 1px)) scaleY(var(--scaleY, 0))
+        transform-origin: top center
+        opacity: var(--o, 0)
+        pointer-events: var(--pe, none)
+        transition: all .25s ease-in-out .1s
+        background: #2cc0ff
+        color: #fff
+        border-bottom-left-radius: .375rem
+        border-bottom-right-radius: .375rem
+        width: calc(100% + 5px)
+        z-index: 4
+        @apply absolute bottom-0 left-1/2 flex flex-col space-y-2
+
+        &.active
+            --o: 1
+            --pe: auto
+            --scaleY: 1
+
+        button
+            @apply text-left px-4 py-2
+
+            &:last-child
+                border-bottom-left-radius: .375rem
+                border-bottom-right-radius: .375rem
+
+            &:hover
+                background: #ff3e71
+                color: #fff

@@ -1,0 +1,79 @@
+#products-list
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    @apply grid gap-4 mt-8 mx-auto
+
+
+    .product
+        @apply grid grid-flow-row gap-2 cursor-pointer
+
+        &:hover
+            --y: -6px
+            --o: 1
+            --pe: auto
+            --x: 0
+            --y2: 0
+
+        .product-thumb
+            max-height: 160px
+            @apply overflow-hidden h-full relative
+
+            &::after
+                content: ""
+                background: var(--product-hover-overlay, linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(3, 161, 224, 0.6)))
+                opacity: var(--o, 0)
+                transition: all .25s ease-in-out
+                @apply absolute inset-0 rounded
+
+            img
+                @apply object-cover object-center w-full h-full rounded
+
+            .sale-percent
+                border-radius: 100vmax
+                background: #ea5b5b
+                letter-spacing: 0.5px
+                color: #fff
+                z-index: 3
+                @apply absolute top-1 right-2 text-xs px-3 py-1
+
+            .product-price
+                background: #fff
+                border-radius: .25rem
+                transform: translateY(var(--y, 3px))
+                transition: all .25s ease-in-out
+                z-index: 2
+                @apply absolute bottom-0 left-2 px-2 flex items-center space-x-3
+
+                .price-before
+                    color: red
+                    @apply relative italic text-xs
+
+                    &::after
+                        content: ""
+                        background: red
+                        height: 1px
+                        width: calc(100% - .25rem)
+                        @apply absolute top-1/2 left-0 -translate-y-1/2
+
+                .main-price
+                    color: #2ca8ff
+                    @apply text-base font-semibold
+
+            .action
+                color: #fff
+                background: #2ca8ff
+                z-index: 3
+                border-top-left-radius: 100vmax
+                pointer-events: var(--pe, none)
+                transform: translate(var(--x, 100%), var(--y2, 100%))
+                transition: all .25s ease-in-out
+                @apply absolute bottom-0 right-0 grid place-items-center h-12 w-12 outline-none border-none
+
+                span
+                    transform: translate(calc(-50% + .25rem), calc(-50% + .125rem))
+                    @apply absolute top-1/2 left-1/2 text-3xl
+
+        .product-title
+            min-height: 3rem
+            font-weight: 500
+            font-size: 1.0625rem
+            @apply text-left

@@ -1,16 +1,15 @@
-import { component$, useClientEffect$ } from '@builder.io/qwik';
-import { DocumentHead, useDocumentHead } from '@builder.io/qwik-city';
+import { component$ } from '@builder.io/qwik';
+import { DocumentHead } from '@builder.io/qwik-city';
+import Search from '~/components/Search/Search';
 import Layout from '~/layouts/Layout';
 
 
 export default component$(() => {
-    useClientEffect$(() => {
 
-    })
     return (
         <>
             <Layout>
-                Search page
+                <Search />
             </Layout>
         </>
     );

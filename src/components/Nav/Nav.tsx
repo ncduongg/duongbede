@@ -1,10 +1,11 @@
-import { component$, useStylesScoped$, useClientEffect$, useStore } from '@builder.io/qwik';
+import { component$, useStyles$, useClientEffect$, useStore } from '@builder.io/qwik';
 import styles from './nav.sass';
 import { Link } from '@builder.io/qwik-city';
+import SearchBox from './SearchBox/SearchBox';
 
 export default component$(() => {
 
-  useStylesScoped$(styles);
+  useStyles$(styles);
 
   const store = useStore({
     scrollPosition: 0,
@@ -22,6 +23,8 @@ export default component$(() => {
     <nav class={store.scrollPosition >= 80 ? 'scrolling' : ''}>
       <div id="nav-content" >
         <Link href="/">Now Space0</Link>
+        <SearchBox />
+        <div>Login</div>
       </div>
     </nav>
   );

@@ -23,7 +23,7 @@ export default component$(() => {
         <>
             <div id="search-box" onClick$={toggleMobileSearch} onMouseLeave$={closeMobileSearch}>
                 <SearchIcon />
-                <input type="search" id="search-input" />
+                <input type="search" id="search-input" placeholder="Type something to search...."/>
             </div>
         </>
     )

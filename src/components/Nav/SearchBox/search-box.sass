@@ -37,7 +37,7 @@
         --pe: auto
         --px: 1.5rem
         --input-search-clr: #fff
-        
+
         svg
             --o: 0
 
@@ -58,6 +58,9 @@
         height: var(--search-box-height)
         width: var(--search-box-width)
         color: var(--input-search-clr, transparent)
+
+        &::placeholder
+            color: rgba(255, 255, 255, .75)
 
         @media (min-width:1024px)
             --py: 1rem

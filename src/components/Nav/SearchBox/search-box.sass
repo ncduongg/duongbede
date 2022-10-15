@@ -3,27 +3,27 @@
     min-height: var(--search-box-height, 30px)
     background: var(--search-box-bg, #f43d6e)
     border-radius: 100vmax
-    transform: translate(var(--search-box-translate-x, 0), var(--search-box-translate-y, 0))
+    transform: translate(0, 0)
     transition: all .25s ease-in-out .1s
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, var(--opacity-search-backdrop, 0))
     @apply mx-auto relative overflow-hidden
+
+    @media (min-width:640px)
+
 
     &.mobile-active
         --search-box-width: 90vw
         --search-box-height: 54px
         --search-box-translate-x: -50%
-        --y: calc(100% + 4px)
         --px: 1.5rem
         --pe: auto
         --search-box-bg: rgba(255, 255, 255, 0.9)
         --search-backdrop-clr: #000
         --opacity-search-backdrop: .5
         --input-search-clr: #2ca8ff
+        transform: translate(-50%, calc(100% + 4px))
         backdrop-filter: blur(2px)
         @apply absolute left-1/2 bottom-0
-
-        @media (min-width:640px)
-            all: unset
 
         svg
             --o: 0
@@ -32,11 +32,10 @@
         --search-box-width: 400px
         --search-box-height: 54px
         --search-box-bg: #f43d6e
-        --search-box-translate-x: 0
-        --search-box-translate-y: calc(100% + 4px)
         --pe: auto
         --px: 1.5rem
         --input-search-clr: #fff
+        transform: translate(0, calc(100% + 4px))
 
         svg
             --o: 0
@@ -60,7 +59,10 @@
         color: var(--input-search-clr, transparent)
 
         &::placeholder
-            color: rgba(255, 255, 255, .75)
+            color: rgba(255, 255, 255, var(--alpha, 0))
+
+        @media (min-width:640px)
+            --alpha: .75
 
         @media (min-width:1024px)
             --py: 1rem

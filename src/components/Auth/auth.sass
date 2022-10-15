@@ -1,0 +1,54 @@
+#auth-modal
+    background: #fff
+    z-index: 999
+    max-width: 1200px
+    min-height: 410px
+    max-height: 410px
+    transform: translate(-50%, -50%)
+    width: calc(100vw - 1rem)
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .95)
+    opacity: var(--o, 0)
+    pointer-events: var(--pe, none)
+    transition: all .25s ease-in-out
+    @apply fixed top-1/2 left-1/2 p-4 rounded-md
+
+    &.active
+        --o: 1
+        --pe: auto
+
+    @media (min-width:1280px)
+        @apply p-6
+
+    #close-auth
+        color: #f43d6e
+        @apply absolute top-2 right-4
+
+    #auth-options
+        @apply flex items-center justify-center space-x-8 text-lg font-semibold mb-8
+
+        @media (min-width: 640px)
+            @apply text-xl
+
+        button
+            @apply uppercase
+
+            &.active
+                color: #2ca8ff
+
+    input
+        outline: none
+        box-shadow: 0 0 0 1.5px var(--outline, #d1d5db)
+        @apply rounded-md px-4 py-2 w-full
+
+        &:focus
+            --outline: #2ca8ff
+
+.auth-btn
+    background: #2ca8ff
+    color: #fff
+    letter-spacing: var(--ls, 0.5px)
+    transition: all .25s ease-in-out
+    @apply py-2.5 uppercase rounded-md
+
+    &:hover
+        --ls: 4px

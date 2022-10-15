@@ -21,3 +21,18 @@ nav
         max-width: 1200px
         will-change: transform, opacity, width, min-height, padding
         @apply w-full h-full mx-auto uppercase flex items-center justify-between
+
+        svg
+            @apply h-6 w-auto
+
+        #your-cart
+            @apply relative mr-6
+
+            .cart-count
+                --s: 1.375rem
+                background: #f83267
+                height: var(--s)
+                width: var(--s)
+                transform:  translate(50%, 50%)
+                pointer-events: none
+                @apply absolute bottom-0 right-0 rounded-full grid place-items-center font-thin text-sm

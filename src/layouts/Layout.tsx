@@ -1,4 +1,5 @@
 import { component$, Slot } from '@builder.io/qwik';
+import Auth from '~/components/Auth/Auth';
 import Nav from '~/components/Nav/Nav';
 export default component$(() => {
 
@@ -8,6 +9,7 @@ export default component$(() => {
       <div id="content">
         <Slot />
       </div>
+      <Auth />
     </>
   );
 });

@@ -1,0 +1,29 @@
+#login
+    @apply flex flex-col
+
+    @media(min-width:768px)
+        @apply flex-row
+
+    & > *
+        @media (min-width:768px)
+            @apply flex-1 flex flex-col justify-center
+
+    #illustrator
+        order: 1
+        @apply grid place-items-center mb-6
+
+        @media (min-width:768px)
+            order: 2
+
+        svg
+            height: 6.5rem
+
+            @media (min-width: 768px)
+                @apply h-64 block
+
+    #login-form
+        order: 2
+        @apply flex flex-col space-y-6
+
+    @media (min-width:768px)
+        order: 1

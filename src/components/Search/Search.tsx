@@ -18,7 +18,7 @@ export default component$(() => {
             <div id="finding">
                 <img src="https://wallpaperaccess.com/full/128744.jpg" />
                 <div id="finding-keyword">
-                    Bạn đang tìm kiếm <span id="keyword">"{route.params.keyword}"</span> trên <span>Now Space0</span>
+                    Your're searching <span id="keyword">"{route.params.keyword}"</span> on <span>Now Space0</span>
                 </div>
             </div>
             <div id="search-content">

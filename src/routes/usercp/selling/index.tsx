@@ -1,14 +1,15 @@
 import { component$ } from '@builder.io/qwik';
 import { DocumentHead } from '@builder.io/qwik-city';
-import Layout from '~/layouts/Layout';
-
+import UserCPLayout from '~/layouts/UserCPLayout';
+import Selling from '~/components/Selling/Selling'
 
 export default component$(() => {
 
     return (
         <>
-            <Layout>
-            </Layout>
+            <UserCPLayout>
+                <Selling />
+            </UserCPLayout>
         </>
     );
 });

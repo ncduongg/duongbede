@@ -15,3 +15,4 @@ import Root from './root';
 export default function (opts: RenderOptions) {
   return render(document, <Root />, opts);
 }
+// mấy file này không cần quan tâm đâu, quan tâm tới folder routes, và components thôi

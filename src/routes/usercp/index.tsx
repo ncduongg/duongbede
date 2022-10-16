@@ -1,21 +1,22 @@
 import { component$ } from '@builder.io/qwik';
 import { DocumentHead } from '@builder.io/qwik-city';
-import Cart from '~/components/Cart/Cart';
+import UserCP from '~/components/UserCP/UserCP';
 import Layout from '~/layouts/Layout';
 
 
 export default component$(() => {
+
     return (
         <>
             <Layout>
-                <Cart />
+                <UserCP />
             </Layout>
         </>
     );
 });
 
 export const head: DocumentHead = {
-    title: 'Your Cart',
+    title: 'User Contron Panel',
     links: [
         {
             href: "jokerdarkknight",

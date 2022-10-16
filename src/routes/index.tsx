@@ -11,7 +11,6 @@ export default component$(() => {
     </>
   );
 });
-
 export const head: DocumentHead = {
   title: 'Now Space0 - Phần mềm bản quyền',
   links: [

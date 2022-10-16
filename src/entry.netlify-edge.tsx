@@ -4,3 +4,4 @@ import render from './entry.ssr';
 const qwikCityHandler = qwikCity(render);
 
 export default qwikCityHandler;
+

@@ -1,6 +1,5 @@
 import { component$, useStyles$ } from '@builder.io/qwik';
 import styles from './usercp.sass'
-import { Link } from '@builder.io/qwik-city'
 import UserCPLayout from '~/layouts/UserCPLayout';
 export default component$(() => {
     useStyles$(styles)

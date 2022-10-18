@@ -1,11 +1,24 @@
-import { component$ } from '@builder.io/qwik';
-
+import { component$, useStyles$ } from '@builder.io/qwik';
+import CustomQuantityInput from '../CustomQuantityInput/CustomQuantityInput';
+import CustomSelectOption from '../CustomSelectOption/CustomSelectOption';
+import styles from './selling-page.sass'
 export default component$(() => {
+    useStyles$(styles)
     return (
         <div id="selling-page">
-            <div class="">
-
+            <div id="selling-inputs">
+                <label>
+                    <input type="text" placeholder='Thumbnail link' />
+                </label>
+                <label>
+                    <input type="text" placeholder='Product Name' />
+                </label>
+                <CustomQuantityInput />
             </div>
+            <CustomSelectOption />
+            <textarea placeholder="Accounts list (1 line / 1 account)">
+
+            </textarea>
         </div>
     )
-}) //java nhìn phê thế :))) :)) viet di moi lu
+})

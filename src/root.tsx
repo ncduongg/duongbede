@@ -1,10 +1,10 @@
-import { component$, useStylesScoped$ } from '@builder.io/qwik';
+import { component$, useStyles$ } from '@builder.io/qwik';
 import { QwikCity, RouterOutlet, ServiceWorkerRegister } from '@builder.io/qwik-city';
 import { RouterHead } from './components/router-head/router-head';
 
 import GlobalStyles from '@public/styles/app.sass';
 export default component$(() => {
-  useStylesScoped$(GlobalStyles)
+  useStyles$(GlobalStyles)
   return (
     <QwikCity>
       <head>

@@ -28,9 +28,9 @@ export default component$(() => {
     <nav class={store.scrollPosition >= 80 ? 'scrolling' : ''}>
       <div id="nav-content" >
         <Link href="/">Now Space0</Link>
-        <button>Toggle</button>
         <div id="menu-list">
-          {/* <!-- api bắn vào đây --> */}
+          <Link href="#!">Category</Link>
+          <Link href="#!">Product</Link>
         </div>
         <SearchBox />
         <Link href="/cart" id="your-cart">

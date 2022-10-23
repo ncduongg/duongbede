@@ -1,6 +1,6 @@
 import { component$, useStylesScoped$ } from '@builder.io/qwik';
 import styles from './product-details.sass';
-import CustomSelectOption from './CustomSelectOption/CustomSelectOption';
+import CustomSelectOption from '../CustomSelectOption/CustomSelectOption'; //ok fixed vl
 import CustomNumbInput from '../CustomNumbInput/CustomNumbInput';
 import Note from './Note/Note';
 import { CartIcon } from './CartIcon';

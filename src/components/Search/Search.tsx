@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { component$, useClientEffect$, useStore, useStyles$, useWatch$} from '@builder.io/qwik';
+import { component$, useClientEffect$, useStore, useStyles$, useWatch$ } from '@builder.io/qwik';
 import { useLocation } from '@builder.io/qwik-city';
 import publicAPi from '~/apis/publicAPI';
 import ProductsList from './ProductsList/ProductsList';
@@ -16,24 +16,22 @@ export default component$(() => {
     });
 
     useWatch$(({ track }) => {
-    track(() => route.params.category_id);
-    return () => {        
-           (async () => {
-               const idCategory = route.params.category_id;               
-            await publicAPi.getCategory(idCategory).then(body => {
-                category.categoryItem = body.data[0];
-            })
-        })()
-       }
-  });
-    useClientEffect$(() => {
-        (async () => {
+        track(() => route.params.category_id);
+        return async () => {
             const idCategory = route.params.category_id;
             await publicAPi.getCategory(idCategory).then(body => {
                 category.categoryItem = body.data[0];
+                console.log(category.categoryItem)
             })
-        })()
-    },{eagerness:'idle'});
+        }
+    });
+    useClientEffect$(async () => {
+        const idCategory = route.params.category_id;
+        await publicAPi.getCategory(idCategory).then(body => {
+            category.categoryItem = body.data[0];
+            console.log(category.categoryItem)
+        })
+    });
     useClientEffect$(() => {
         document.title = `Searching ${category.categoryItem.cate_name} on Now Space0`
     })
@@ -46,7 +44,7 @@ export default component$(() => {
                     Your're searching <span id="keyword">"{category.categoryItem.cate_name}"</span> on <span>Now Space0</span>
                 </div>
             </div>
-            <input type="text" /> 
+            <input type="text" />
             <div id="search-content">
                 <div id="search-filter">
                     <SearchFilter />

@@ -13,22 +13,18 @@ export default component$(() => {
 
   const store = useStore({
     scrollPosition: 0,
+    menuItems: []
   });
-  const categories = useStore({
-    body:[]
-  });
-  useClientEffect$(() => {
-    (async () => {
-      await publicAPi.getEnabledCategorie().then(body => {
-        categories.body = body.data;
-      });
-    })();
-  }, []);
-  useClientEffect$(() => {
+  
+  useClientEffect$(async () => {
     window.addEventListener('scroll', () => {
       store.scrollPosition = window.scrollY
     })
-  })
+
+    await publicAPi.getEnabledCategorie().then(body => {
+      store.menuItems = body.data;
+    });
+  }, { eagerness: 'load' });
 
   const callAuthModal = $(() => {
     const el = document.querySelector('#auth-modal') as HTMLDivElement
@@ -40,9 +36,12 @@ export default component$(() => {
       <div id="nav-content" >
         <Link href="/">Now Space0</Link>
         <div id="menu-list">
-          {categories.body.map(category => {
-            return (<Link href={'/search/' + category.cate_id + '/1'} >{category.cate_name}</Link>)
-          })}
+          {store.menuItems.map(item => {
+            return (
+              <Link href={'/search/' + item.cate_id + '/1'} >{item.cate_name}</Link>
+            )
+          })
+          }
         </div>
         <SearchBox />
         <Link href="/cart" id="your-cart">

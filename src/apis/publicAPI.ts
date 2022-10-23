@@ -1,12 +1,15 @@
 //@ts-nocheck
-//dùng cái dòng này thì không check strict nữa :)) đỡ báo error nếu a thấy khó chịu
-import axiosClients from "./axiosClient";
-const publicAPi = () => {
-    getCategory = (idCategory) => {
-        axiosClients.get('/api/public/category/' + idCategory).then().catch();
-    }
-    getProduct = (idProduct) => {
-        axiosClients.get('/api/public/product/' + idProduct).then().catch();
-    }
-}
+import axiosClients from './axiosClient';
+const publicAPi = {
+  getCategory(idCategory) {
+    return axiosClients.get('/api/public/category/' + idCategory);
+  },
+  getProduct(idProduct) {
+    return axiosClients.get('/api/public/product/' + idProduct);
+  },
+  getEnabledCategorie() {
+    return axiosClients.get('/api/public/categories');
+  },
+};
 export default publicAPi;
+//thằng này mới thỉnh thoảng lỗi hơi dị, em follow mấy cái cộng đồng của nó toàn khoe performace :)) stablibity thì như clg v :)))

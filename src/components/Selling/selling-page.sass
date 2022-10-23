@@ -1,15 +1,59 @@
 #selling-page
-    #selling-inputs
-        @apply flex flex-col space-y-6 mb-6
+    .selling-inputs
+        @apply flex flex-col space-y-6 my-6
 
         @media (min-width:768px)
             @apply flex-row space-y-0 space-x-6
 
+    input[type="text"]
+        box-shadow: 0 0 0 1.5px #5aace7
+        @apply px-4 py-2 rounded w-full
 
-        input[type="text"]
-            box-shadow: 0 0 0 1.5px #5aace7
-            @apply px-4 py-2 rounded w-full
+    textarea
+        box-shadow: 0 0 0 1.5px #5aace7
+        @apply w-full h-44 rounded p-4
 
-        textarea
-            box-shadow: 0 0 0 1.5px #5aace7
-            @apply w-full h-44 
+    #selling-history
+        @apply mt-8
+
+        .product-uploaded
+            border-color: #5aace7
+            @apply grid grid-cols-2 border-2 rounded-md border-dotted mt-4
+
+            .product-thumbnail
+                @apply p-4
+
+                img
+                    @apply rounded-md
+
+            .product-info
+                @apply p-4 flex flex-col justify-center
+
+                .title-duration
+                    @apply flex items-center space-x-2
+
+                    .product-title
+                        @apply text-lg
+
+                    .product-duration
+                        @apply font-thin italic text-sm
+
+                .product-price
+                    @apply flex items-center space-x-2
+
+                    .main-price
+                        color: #2ca8ff
+                        @apply text-xl font-semibold
+
+                    .price-before
+                        color: red
+                        @apply text-sm relative italic
+
+                        &::after
+                            content: ""
+                            height: 0.5px
+                            background: red
+                            @apply absolute top-1/2 left-0 -translate-y-1/2 right-0
+
+                .product-quantity
+                    color: blue
